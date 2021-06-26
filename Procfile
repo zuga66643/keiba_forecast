@@ -1,0 +1,1 @@
+web: gunicorn keiba_forecast.wsgi
