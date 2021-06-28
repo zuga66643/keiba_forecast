@@ -1,17 +1,16 @@
+{% extends 'keiba_forecasts/base.html' %}
+{% load bootstrap4 %}
 {% load static %}
-<html>
-    <head>
-        <title>すがの競馬展開予想</title>
-    </head>
-    <body>
-        <h1>すがの競馬展開予想</h1>
-        <h2>予想するレース</h2>
-        <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="save btn btn-default">予想する</button>
-        </form>
-        <p>{{year}}年 {{place}} {{num}}回 {{day}}日目 {{race}}R</p>
-        <img src={{src}} />
-    </body>
 
-</html>
+{% block content %}
+  <form method="POST" class="post-form">{% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    <div class="form-group row">
+      <div class="offset-md-3 col-md-9">
+        <button type="submit" class="btn btn-success">予想する</button>
+      </div>
+    </div>
+  </form>
+  <p>{{year}}年 {{place}} {{num}}回 {{day}}日目 {{race}}R</p>
+  <img src={{src}} />
+{% endblock content %}
