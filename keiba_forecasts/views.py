@@ -4,9 +4,9 @@ from .forms import RaceForm
 
 # Create your views here.
 def index(request):
-    form = RaceForm()
-    content_dict = {'form':form}
     if request.method == 'POST':
+        form = RaceForm(request.POST)
+        content_dict = {'form':form}
         content_dict['year'] = request.POST.get('year', None)
         content_dict['place'] = request.POST.get('place', None)
         content_dict['num'] = request.POST.get('num', None)
@@ -37,17 +37,21 @@ def index(request):
         if int(content_dict['race']) < 10:
             race = '0' + content_dict['race']  
         else:
-            race =  content_dict['race']  
+            race =  content_dict['race']
         
-        race_id = str(content_dict['year']) + place_num + num + day + race
+        year = str(content_dict['year'])
+        race_id = year + place_num + num + day + race
         
 
         src = f'/static/{race_id}deployment.png'
 
+        place = content_dict['place']
+        content_dict['info'] = f'{year}年 {place} {num}回 {day}日目 {race}R'
         content_dict['src'] = src
         content_dict['id'] = race_id
     else:
-        pass
+        form = RaceForm()
+        content_dict = {'form':form}
 
 
     return render(request, 'keiba_forecasts/index.html', content_dict)

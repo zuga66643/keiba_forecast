@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+  <p><span style="color:orange;">※数字は半角で入力してください。</span></p>
   <form method="POST" class="post-form">{% csrf_token %}
     {% bootstrap_form form layout='horizontal' %}
     <div class="form-group row">
@@ -11,6 +12,6 @@
       </div>
     </div>
   </form>
-  <p>{{year}}年 {{place}} {{num}}回 {{day}}日目 {{race}}R</p>
-  <img src={{src}} />
+  <p>{{ info }}</p>
+  <img src={{src}} / class="img-fluid" alt="Responsive image">
 {% endblock content %}
