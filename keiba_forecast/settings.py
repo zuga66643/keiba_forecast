@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-pvrep2poby(n0buob7h@%o-zf$d2$9(u5mu%4*z2tk6w)a7ruv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['suga-keiba-forecast.herokuapp.com']
 
 
 # Application definition
@@ -82,9 +82,14 @@ WSGI_APPLICATION = 'keiba_forecast.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# 追記
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
