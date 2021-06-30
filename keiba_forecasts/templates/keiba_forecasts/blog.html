@@ -1,0 +1,9 @@
+{% extends 'keiba_forecasts/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+  <h5>{{blog}}</h5>
+  <p>{{text|linebreaks}}</p>
+  <p>{{date}}</p>
+{% endblock content %}

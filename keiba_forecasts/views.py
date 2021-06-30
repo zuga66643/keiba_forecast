@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from .forms import RaceForm
 
+from .models import Blog
+
 # Create your views here.
 def index(request):
     if request.method == 'POST':
@@ -57,5 +59,21 @@ def index(request):
     return render(request, 'keiba_forecasts/index.html', content_dict)
 
 
+def about(request):
+    return render(request, 'keiba_forecasts/about.html')
 
 
+def blogs(request):
+    blogs = Blog.objects.order_by('date')
+    context = {'blogs':blogs}
+    return render(request, 'keiba_forecasts/blogs.html', context)
+
+
+def blog(request, blog_id):
+    blog = Blog.objects.get(id=blog_id)
+    context = {
+        'blog':blog,
+        'text':blog.text,
+        'date':blog.date,
+    }
+    return render(request, 'keiba_forecasts/blog.html', context)

@@ -3,13 +3,11 @@
 {% load static %}
 
 {% block content %}
-  <p><span style="color:orange;">※数字は半角で入力してください。</span></p>
-  <form method="POST" class="post-form">{% csrf_token %}
-    {% bootstrap_form form layout='horizontal' %}
-    <div class="form-group row">
-      <div class="offset-md-3 col-md-9">
+  <p style="color:orange;">※データは今週分しか表示できません。</p>
+  <form method="POST" class="mb-3">{% csrf_token %}
+    {% bootstrap_form form %}
+    <div >
         <button type="submit" class="btn btn-success">予想する</button>
-      </div>
     </div>
   </form>
   <p>{{ info }}</p>

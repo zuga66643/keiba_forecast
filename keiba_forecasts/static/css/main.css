@@ -1,0 +1,17 @@
+body {
+    background-color: saddlebrown;
+}
+
+h1 {
+    color: saddlebrown;
+    font-family: "けいふぉんと";
+    text-shadow: 5px 5px 2px silver;
+    letter-spacing: 0.1em;
+}
+
+@media screen and (max-width: 560px) {/* 560px以下*/
+    h1{
+        font-size: 60%;/* 21px*/
+    }
+}
+
