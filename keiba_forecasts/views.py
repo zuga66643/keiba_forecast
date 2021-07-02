@@ -25,6 +25,8 @@ def index(request):
         
         if place_num < 10:
             place_num = '0' + str(place_num)
+        else:
+            place_num = str(place_num)
 
         if int(content_dict['num']) < 10:
             num = '0' + content_dict['num']
