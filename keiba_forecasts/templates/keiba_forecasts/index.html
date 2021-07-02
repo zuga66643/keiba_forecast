@@ -3,7 +3,11 @@
 {% load static %}
 
 {% block content %}
-  <p style="color:orange;">※データは今週分しか表示できません。</p>
+  <div class='leads'>
+    <p class="lead"><span class='small'>
+    今週に行われるレースの展開を予想します。<br>
+    <p>今週の開催情報はこちらから→<a class='jra-link' href='https://www.jra.go.jp/'>JRA公式HP</a></p>
+  </div>
   <form method="POST" class="mb-3">{% csrf_token %}
     {% bootstrap_form form %}
     <div >

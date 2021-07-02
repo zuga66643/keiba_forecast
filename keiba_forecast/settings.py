@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-pvrep2poby(n0buob7h@%o-zf$d2$9(u5mu%4*z2tk6w)a7ruv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['suga-keiba-forecast.herokuapp.com']
 

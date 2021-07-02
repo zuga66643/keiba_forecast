@@ -45,7 +45,7 @@ def index(request):
         race_id = year + place_num + num + day + race
         
 
-        src = f'/static/{race_id}deployment.png'
+        src = f'/static/deployment/{race_id}deployment.png'
 
         place = content_dict['place']
         content_dict['info'] = f'{year}年 {place} {num}回 {day}日目 {race}R'

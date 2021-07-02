@@ -6,7 +6,7 @@
   <h2>ブログ一覧</h2>
     <ul>
       {% for blog in blogs %}
-        <li><a href='{% url "keiba_forecasts:blog" blog.id %}'>{{blog}}</a></li>
+        <li><p><a href='{% url "keiba_forecasts:blog" blog.id %}'>{{blog}}</a><span class='b_date'>　{{blog.date}}作成</span></p></li>
       {% empty %}
         <li>記事はまだありません</li>
       {% endfor %}
