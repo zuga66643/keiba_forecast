@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(-135deg, #d3c1a0, #856221 ) fixed;
+    background-size: cover; 
+}
+
+
+.leads {
+    color: rgb(0, 0, 0);
+}
+
+
+.jra-link {
+    text-shadow:
+    1px  1px 1px white ,
+    -1px  1px 1px white ,
+     1px -1px 1px white ,
+    -1px -1px 1px white;
+}
+
+
+nav {
+    background: linear-gradient(-135deg, #d3c1a0, #856221 ) fixed;
+    
+}
+
+
+.navbar-brand {
+    text-shadow:
+    1px  1px 1px white ,
+    -1px  1px 1px white ,
+     1px -1px 1px white ,
+    -1px -1px 1px white;
+    font-family: "けいふぉんと";
+}
+
+h2 {
+    font-size:medium;
+}
+
+.b_date {
+    font-size: small;
+}
