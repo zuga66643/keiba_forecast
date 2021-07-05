@@ -4,6 +4,7 @@ body {
 }
 
 
+
 .leads {
     color: rgb(0, 0, 0);
 }
@@ -37,6 +38,34 @@ h2 {
     font-size:medium;
 }
 
+h3 {
+    font-size:medium;
+}
+
 .b_date {
     font-size: small;
+}
+
+
+ul {
+    list-style: none;
+  }
+
+
+.comment {
+    margin:1em;
+    padding:0.5em!important;
+    }
+
+
+.comment_name {
+    font-size: 0.9em;
+    color: rgb(15, 151, 38);
+}
+.comment_date {
+    font-size: 0.7em;
+    color: rgb(46, 201, 71);
+}
+.comment_text {
+    font-size: 1em;
 }

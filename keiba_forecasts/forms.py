@@ -1,4 +1,7 @@
+from django.db.models import fields
+from keiba_forecasts.models import Comment
 from django import forms
+from .models import Comment
 
 
 class RaceForm(forms.Form):
@@ -20,4 +23,10 @@ class RaceForm(forms.Form):
     for i in range(1,13):
         c_race.append((str(i),str(i)))
     race = forms.ChoiceField(label='R', initial='1', choices=c_race)
+
+
+class CommentForm(forms.ModelForm):
+        class Meta:
+            model = Comment
+            fields = ['name','text']
 

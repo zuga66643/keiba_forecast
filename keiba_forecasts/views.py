@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
-from .forms import RaceForm
+from .forms import RaceForm, CommentForm
 
-from .models import Blog
+from .models import Blog, Comment
 
 # Create your views here.
 def index(request):
@@ -78,4 +78,28 @@ def blog(request, blog_id):
         'text':blog.text,
         'date':blog.date,
     }
+    form = CommentForm()
+    comment_num = Comment.objects.filter(blog=blog).count()
+    context['form'] = form
+    context['comment_num'] = comment_num
     return render(request, 'keiba_forecasts/blog.html', context)
+
+
+def comments(request, blog_id):
+    blog = Blog.objects.get(id=blog_id)
+
+    if request.method != 'POST':
+        form = CommentForm()
+    else:
+        form =CommentForm(data=request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+            new_comment.blog = blog
+            new_comment.save()
+            form = CommentForm()
+    comments = blog.comments.all()
+    context = {'comments':comments}
+    context['form'] = form
+    context['blog'] = blog 
+    return render(request, 'keiba_forecasts/comments.html', context)
+

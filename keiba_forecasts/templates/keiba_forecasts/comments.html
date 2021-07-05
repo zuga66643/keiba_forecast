@@ -1,0 +1,29 @@
+{% extends 'keiba_forecasts/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+<p>a</p>
+{% block content %}
+  <a href="{{request.META.HTTP_REFERER}}">記事に戻る</a>
+  <form action='{% url "keiba_forecasts:comments" blog.id %}' method="POST" class="mb-3">{% csrf_token %}
+    {% bootstrap_form form %}
+    <div >
+        <button type="submit" class="btn btn-success">コメントを書く</button>
+    </div>
+  </form>
+  <h3>コメント</h3>
+    <div class='comments'>  
+        <ul>
+        {% for comment in comments %}
+            <div class='comment'>
+                <li class='comment_name'>{{comment.name}}さん  <span class='comment_date'>{{comment.date}}</span></li>
+                <li class='comment_text'>{{comment.text}}</li>
+            </div>
+        {% empty %}
+            <div class='comment'>
+                <li>コメントはまだありません</li>
+            </div>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}

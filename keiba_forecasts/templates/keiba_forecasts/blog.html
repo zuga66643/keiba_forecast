@@ -3,7 +3,9 @@
 {% load static %}
 
 {% block content %}
+  <h2><a href="{% url 'keiba_forecasts:blogs' %}">ブログ一覧</a></h2>
   <h5>{{blog}}</h5>
   <p>{{text|linebreaks}}</p>
   <p>{{date}}</p>
+  <a href='{% url "keiba_forecasts:comments" blog.id %}'>コメント [{{ comment_num }}]</a>
 {% endblock content %}
