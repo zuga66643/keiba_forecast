@@ -95,9 +95,9 @@ def comments(request, blog_id):
             new_comment.blog = blog
             new_comment.save()
             form = CommentForm()
-    comments = blog.comments.all()
+    comments = blog.comment_set.order_by('-date')
     context = {'comments':comments}
     context['form'] = form
-    context['blog'] = blog 
+    context['blog'] = blog
     return render(request, 'keiba_forecasts/comments.html', context)
 

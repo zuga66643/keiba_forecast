@@ -4,7 +4,7 @@
 
 <p>a</p>
 {% block content %}
-  <a href="{{request.META.HTTP_REFERER}}">記事に戻る</a>
+  <a href='{% url "keiba_forecasts:blog" blog.id %}'>記事に戻る</a>
   <form action='{% url "keiba_forecasts:comments" blog.id %}' method="POST" class="mb-3">{% csrf_token %}
     {% bootstrap_form form %}
     <div >
