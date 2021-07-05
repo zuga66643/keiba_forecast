@@ -79,9 +79,7 @@ def blog(request, blog_id):
         'date':blog.date,
     }
     form = CommentForm()
-    comment_num = Comment.objects.filter(blog=blog).count()
     context['form'] = form
-    context['comment_num'] = comment_num
     return render(request, 'keiba_forecasts/blog.html', context)
 
 
