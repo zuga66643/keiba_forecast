@@ -23,7 +23,7 @@ class Comment(models.Model):
     name = models.CharField('名前', max_length=200)
     text = models.TextField('コメント')
     date = models.DateTimeField(auto_now_add=True)
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, related_name='comments', on_delete=models.CASCADE)
 
 
     def __str__(self):

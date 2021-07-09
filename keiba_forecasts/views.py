@@ -66,7 +66,7 @@ def about(request):
 
 
 def blogs(request):
-    blogs = Blog.objects.order_by('date')
+    blogs = Blog.objects.order_by('-date')
     context = {'blogs':blogs}
     return render(request, 'keiba_forecasts/blogs.html', context)
 
@@ -77,7 +77,10 @@ def blog(request, blog_id):
         'blog':blog,
         'text':blog.text,
         'date':blog.date,
+        'comments':blog.comments,
     }
+    c_num = blog.comments.count()
+    context['c_num'] = c_num
     form = CommentForm()
     context['form'] = form
     return render(request, 'keiba_forecasts/blog.html', context)
@@ -95,9 +98,13 @@ def comments(request, blog_id):
             new_comment.blog = blog
             new_comment.save()
             form = CommentForm()
-    comments = blog.comment_set.order_by('-date')
+    comments = blog.comments.order_by('-date')
     context = {'comments':comments}
     context['form'] = form
     context['blog'] = blog
     return render(request, 'keiba_forecasts/comments.html', context)
 
+
+def dopester(request):
+    #予想家掲示板を表示
+    return render(request, 'keiba_forecasts/dopester.html')

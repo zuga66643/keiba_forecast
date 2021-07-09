@@ -12,4 +12,5 @@ urlpatterns = [
     path('blogs/', views.blogs, name='blogs'),
     path('blogs/<int:blog_id>', views.blog, name='blog'),
     path('blogs/<int:blog_id>/comments/', views.comments, name='comments'),
+    path('dopester', views.dopester, name='dopester'),
 ]
