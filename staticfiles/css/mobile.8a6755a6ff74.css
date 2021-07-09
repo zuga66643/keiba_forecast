@@ -1,9 +1,6 @@
-/*bodyはレスポンシブ*/
 body {
     background: linear-gradient(-135deg, #d3c1a0, #856221 ) fixed;
-    background-size: cover;
-    max-width:60em;
-    margin: auto;
+    background-size: cover; 
 }
 
 
@@ -95,3 +92,8 @@ ul {
 .dope_text {
     font-size: 1em;
 }
+
+.auth {
+    margin: 1em;
+}
+
