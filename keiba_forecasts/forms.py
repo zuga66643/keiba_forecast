@@ -1,7 +1,7 @@
 from django.db.models import fields
 from keiba_forecasts.models import Comment
 from django import forms
-from .models import Comment
+from .models import Comment, Post
 
 
 class RaceForm(forms.Form):
@@ -30,3 +30,8 @@ class CommentForm(forms.ModelForm):
             model = Comment
             fields = ['name','text']
 
+
+class PostForm(forms.ModelForm):
+        class Meta:
+            model = Post
+            fields = ['text']

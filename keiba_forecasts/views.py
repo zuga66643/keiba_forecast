@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-from .forms import RaceForm, CommentForm
+from .forms import RaceForm, CommentForm, PostForm
 
-from .models import Blog, Comment
+from .models import Blog, Comment, Post
 
 # Create your views here.
 def index(request):
@@ -107,4 +107,18 @@ def comments(request, blog_id):
 
 def dopester(request):
     #予想家掲示板を表示
-    return render(request, 'keiba_forecasts/dopester.html')
+    posts = Post.objects.order_by('-date')
+    if request.method != 'POST':
+        form = PostForm()
+    else:
+        form = PostForm(data=request.POST)
+        if form.is_valid():
+            new_post = form.save(commit=False)
+            new_post.created_by = request.user
+            new_post.save()
+            form = CommentForm()
+            return redirect('keiba_forecasts:dopester')
+    
+    context = {'posts':posts}
+    context['form'] = form
+    return render(request, 'keiba_forecasts/dopester.html', context)

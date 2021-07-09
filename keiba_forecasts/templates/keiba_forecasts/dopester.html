@@ -4,5 +4,26 @@
 
 {% block content %}
   <h2>予想家掲示板</h2>
+  {% if not user.is_authenticated %}
   <p>投稿には予想家登録が必要です。</p>
+  <a class='auth' href='{% url "users:register" %}'>予想家登録</a>
+  <a class='auth' href='{% url "users:login" %}'>ログイン</a>
+  {% else %}
+  <a class='auth' href='{% url "users:logout" %}'>ログアウト</a>
+  <form action='{% url "keiba_forecasts:dopester" %}' method="POST" class="mb-3">{% csrf_token %}
+    {% bootstrap_form form %}
+    <div >
+        <button type="submit" class="btn btn-secondary">投稿</button>
+    </div>
+  </form>
+  {% endif %} 
+  <ul>
+    {% for post in posts %}
+      <li><p class='dope_name'>{{post.created_by}}さん <span class='dope_date'>{{post.date}}</span></p></li>
+      <li><p class='dope_text'>{{post}}</p></li>
+    {% empty %}
+      <li>記事はまだありません</li>
+    {% endfor %}
+  </ul>
+
 {% endblock content %}

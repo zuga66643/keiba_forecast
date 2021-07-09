@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['suga-keiba-forecast.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'users',
     'keiba_forecasts',
     'bootstrap4',
     'django.contrib.admin',

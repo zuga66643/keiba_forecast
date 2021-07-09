@@ -1,0 +1,13 @@
+{% extends 'keiba_forecasts/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+  <form method='post' action='{% url "users:register" %}'>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name='submit'>予想家として登録</button>
+    <input type='hidden' name='next' value='{% url "keiba_forecasts:dopester" %}'>
+  </form>
+{% endblock content %}

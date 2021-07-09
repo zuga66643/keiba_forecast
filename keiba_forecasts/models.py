@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -24,6 +24,16 @@ class Comment(models.Model):
     text = models.TextField('コメント')
     date = models.DateTimeField(auto_now_add=True)
     blog = models.ForeignKey(Blog, related_name='comments', on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.text
+
+
+class Post(models.Model):
+    text = models.TextField('コメント')
+    date = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
     def __str__(self):

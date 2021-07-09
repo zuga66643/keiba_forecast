@@ -1,0 +1,18 @@
+{% extends 'keiba_forecasts/base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block content %}
+  {% if form.errors %}
+    <P>ユーザー名とパスワードが一致しません。もう一度お試しください。</p>
+  {% endif %}
+
+
+  <form method='post' action='{% url "users:login" %}'>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name='submit'>ログイン</button>
+    <input type='hidden' name='next' value='{% url "keiba_forecasts:dopester" %}'>
+  </form>
+{% endblock content %}

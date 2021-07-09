@@ -79,3 +79,21 @@ ul {
 .comment_text {
     font-size: 1em;
 }
+
+
+.dope_name {
+    font-size: 0.9em;
+    color: rgb(15, 151, 38);
+}
+.dope_date {
+    font-size: 0.7em;
+    color: rgb(46, 201, 71);
+}
+.dope_text {
+    font-size: 1em;
+}
+
+.auth {
+    margin: 1em;
+}
+
