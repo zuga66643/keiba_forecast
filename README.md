@@ -12,6 +12,6 @@ suga_keiba_projectsからスクレイピング、データ形成して、
 * numpy                     1.20.2
 * ttkthemes                 3.2.2
  
-![スクリーンショット (42)](https://user-images.githubusercontent.com/80620513/124544798-cc427200-de62-11eb-8a27-095027d9b4c7.png)
-![スクリーンショット (43)](https://user-images.githubusercontent.com/80620513/124544831-dc5a5180-de62-11eb-96c0-6b3f98c9e1a1.png)
-![スクリーンショット (45)](https://user-images.githubusercontent.com/80620513/124544836-debcab80-de62-11eb-87e4-900259a8f626.png)
+![スクリーンショット (48)](https://user-images.githubusercontent.com/80620513/125235721-ddd1c100-e31d-11eb-9ef1-1fd163d2439a.png)
+![スクリーンショット (49)](https://user-images.githubusercontent.com/80620513/125235726-df02ee00-e31d-11eb-9465-2a807485c3db.png)
+![スクリーンショット (50)](https://user-images.githubusercontent.com/80620513/125235731-e0341b00-e31d-11eb-9fbd-2ca22275ddb4.png)
