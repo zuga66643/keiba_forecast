@@ -13,5 +13,6 @@ suga_keiba_projectsからスクレイピング、データ形成して、
 * ttkthemes                 3.2.2
  
 ![スクリーンショット (48)](https://user-images.githubusercontent.com/80620513/125235721-ddd1c100-e31d-11eb-9ef1-1fd163d2439a.png)
-![スクリーンショット (49)](https://user-images.githubusercontent.com/80620513/125235726-df02ee00-e31d-11eb-9465-2a807485c3db.png)
+![スクリーンショット (51)](https://user-images.githubusercontent.com/80620513/125235881-212c2f80-e31e-11eb-9926-bb538118f762.png)
 ![スクリーンショット (50)](https://user-images.githubusercontent.com/80620513/125235731-e0341b00-e31d-11eb-9fbd-2ca22275ddb4.png)
+
