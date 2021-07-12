@@ -2,11 +2,11 @@
 https://suga-keiba-forecast.herokuapp.com/
 
 # suga_keiba_projects
-競馬予想webアプリです。 
-herokuを使用して公開しています。 
+競馬予想webアプリです。  
+herokuを使用して公開しています。  
 suga_keiba_projectsからスクレイピング、データ形成して、保存した競馬予想図を
-フォームで検索し、表示できます。 
-また、掲示板、ブログ機能を搭載しています。 
+フォームで検索し、表示できます。  
+また、掲示板、ブログ機能を搭載しています。  
  
 # 使用環境、ライブラリ
 * Django                    3.2.4
