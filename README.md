@@ -4,8 +4,8 @@ https://suga-keiba-forecast.herokuapp.com/
 # suga_keiba_projects
 競馬予想のwebアプリです。  
 herokuを使用して公開しています。  
-別アプリsuga_keiba_projectsにて作成した競馬展開予想図を
-本アプリのフォーム検索から表示します。  
+別アプリsuga_keiba_projectsにて作成した競馬展開予想図を  
+本アプリのフォーム検索から表示できるようにしました。  
 また、掲示板、ブログ機能を搭載しています。  
  
 # 使用環境、ライブラリ
