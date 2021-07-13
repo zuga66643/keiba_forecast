@@ -1,7 +1,7 @@
 # URL
 https://suga-keiba-forecast.herokuapp.com/
 
-# suga_keiba_projects
+# keiba_forecast
 競馬予想のwebアプリです。  
 herokuを使用して公開しています。  
 別アプリsuga_keiba_projectsにて作成した競馬展開予想図を  
